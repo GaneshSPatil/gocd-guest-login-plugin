@@ -5,7 +5,7 @@ GoCD Guest User Login Plugin allows the user to login as a guest to [GoCD](https
 * GoCD server version v17.5.0 or above
 
 ## Installation
-Copy the file build/libs/gocd-guest-login-plugin-VERSION.jar to the GoCD server under ${GO_SERVER_DIR}/plugins/external and restart the server. The GO_SERVER_DIR is usually /var/lib/go-server on Linux and C:\Program Files\Go Server on Windows.
+Copy the file `build/libs/gocd-guest-login-plugin-VERSION.jar` to the GoCD server under `${GO_SERVER_DIR}/plugins/external` and restart the server. The `GO_SERVER_DIR` is usually `/var/lib/go-server` on Linux and `C:\Program Files\Go Server` on Windows.
 
 ### Configuration
 
@@ -13,7 +13,7 @@ Copy the file build/libs/gocd-guest-login-plugin-VERSION.jar to the GoCD server 
 
 1. Login to GoCD Server as admin and navigate to **_Admin_** _>_ **_Security_** _>_ **_Authorization Configuration_**
 2. Click on Add to create new authorization configuration:  
-    1. Specify id for auth config
+    1. Specify `id` for auth config
     2. Select `Guest Authorization Plugin` for _**Plugin Id**_ 
     3. Specify `Go Server Url`
     4. Specify `Username` of the guest user.
@@ -23,12 +23,12 @@ Copy the file build/libs/gocd-guest-login-plugin-VERSION.jar to the GoCD server 
     !["Guest Login Plugin Auth Config"][1]
 
 #### Troubleshooting
-Enabling debug level logging can help you troubleshoot an issue with the `Guest Authorization Plugin`. To enable debug level logs, edit the /etc/default/go-server (for Linux) to add
+Enabling debug level logging can help you troubleshoot an issue with the `Guest Authorization Plugin`. To enable debug level logs, edit the `/etc/default/go-server` (for Linux) to add
 ```
 export GO_SERVER_SYSTEM_PROPERTIES="$GO_SERVER_SYSTEM_PROPERTIES -Dplugin.cd.go.contrib.authorization.guest.log.level=debug"
 ```
 
-If you're running the server via ./server.sh script —
+If you're running the server via `./server.sh` script —
 ```
 $ GO_SERVER_SYSTEM_PROPERTIES="-Dplugin.cd.go.contrib.authorization.guest.log.level=debug" ./server.sh
 ```
